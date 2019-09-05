@@ -1,14 +1,30 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <div id="output">{{ output }}</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="primary" (click)="clear()">C</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="secondary" (click)="push($event)">1</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="secondary" (click)="push($event)">2</ion-button>
+      </ion-col>
+      <ion-col>  
+        <ion-button color="primary" (click)="pushOperator($event)">+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-button color="primary" (click)="pushOperator($event)">-</ion-button>
+      <ion-button color="primary" (click)="pushEquals()">=</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
